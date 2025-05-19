@@ -1,0 +1,16 @@
+{
+  "name": "tailwind_quotationmaker",
+  "version": "1.0.0",
+  "description": "Tailwind CSS using webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "dev": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./assets/styles/output.css --watch"
+  },
+  "author": "Sonal Ghinaiya",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.17",
+    "tailwindcss": "^4.0.17"
+  }
+}

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme{
+    --breakpoint-sm:700px;
+    --breakpoint-big:1300px;
+    --padding-10:10px; 
+    /* customize padding class  */
+    /* make new customize class  */
+    --padding-c-50:50px;
+}
