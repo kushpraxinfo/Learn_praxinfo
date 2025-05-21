@@ -2,19 +2,19 @@
 const car = {type:"Fiat", model:"500", color:"white"};
 
 // Prevents adding object properties
-Object.preventExtensions(object)
+console.log(Object.preventExtensions(car))
 
 // Returns true if properties can be added to an object
-Object.isExtensible(object)
+console.log(Object.isExtensible(car))
 
 // Prevents adding and deleting object properties
-Object.seal(object)
+console.log(Object.seal(car))
 
 // Returns true if object is sealed
-Object.isSealed(object)
+console.log(Object.isSealed(car))
 
 // Prevents any changes to an object
-Object.freeze(object)
+console.log(Object.freeze(car))
 
 // Returns true if object is frozen
-Object.isFrozen(object)
+Object.isFrozen(car)

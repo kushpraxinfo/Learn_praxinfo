@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Example</title>
+</head>
+
+<body>
+  <h1>Product Data</h1>
+  <p id="p"></p>
+
+  <table border="1" id="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- Data rows will appear here -->
+    </tbody>
+  </table>
+
+  <button id="fetchBtn">Fetch with XMLHttpRequest</button>
+
+  <script>
+    const tableBody = document.getElementById('tableBody');
+
+    // Load products automatically on page load using fetch()
+    fetch('https://dummyjson.com/products')
+      .then(res => res.json())
+      .then(res => {
+        res.products.forEach(product => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.title}</td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      });
+
+    // Load products using XMLHttpRequest on button click
+    const fetchBtn = document.getElementById('fetchBtn');
+    fetchBtn.addEventListener('click', function () {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://dummyjson.com/products', true);
+      xhr.onload = function () {
+        const response = JSON.parse(this.responseText);
+        response.products.forEach(product => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${product.id}</td>
+            <td>${product.title}</td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      };
+      xhr.send();
+    });
+  </script>
+
+</body>
+
+</html>
